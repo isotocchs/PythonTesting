@@ -1,12 +1,16 @@
-print("Hello")
+# Here im printing stuff
+
+# print("Bob is awesome")
+
 
 #variable stores information
 #integer (int) variable holds a whole number
-#age = 25
 
+# age=100
 # print(age)
+# print(type(age))
 
-# age is the variable, 25 is the information
+# something is the variable, 25 is the information
 
 #floating point variable holds a decimal
 
@@ -16,34 +20,34 @@ print("Hello")
 
 #String variable holds a word
 
-# words = "Banana"
+# words = "apples"
 # print(words)
-#
+# #
 # print(type(words))
-# print(type(age))
+# print(words*age)
 
 # # Break sequences in strings
 # moreWords = "This is a test to see what happens"
 # print(moreWords)
-# moreWords = "This is a \"test to see what happens\""
+# moreWords = "This is a \"test to see what\" happens"
 # print(moreWords)
-# moreWords = "This is a \'test to see what happens\'"
+# moreWords = "This is a \'test to see what\' happens\'"
 # print(moreWords)
-# moreWords = "This is a \\test to see what happens\\"
+# moreWords = "This is a \\test to see what \\happens"
 # print(moreWords)
-# moreWords = "This is a \ntest to see what happens"
+# moreWords = "This is a \ntest to see \nwhat happens"
 # print(moreWords)
 #
 # #formated strings
 # first = "Tom"
 # last = "Smith"
-# full = first+last
+# full = first+" "+last
+# print(full)
+# #
+# full = f"{first}       {last}"
 # print(full)
 #
-# full = f"{first} {last}"
-# print(full)
-#
-# full = f"{4} \n {5+6}"
+# full = f"{4} \n {5+6+56} {first}"
 # print(full)
 
 
@@ -51,12 +55,17 @@ print("Hello")
 
 # condition = True
 # otherCondition = False
+#
+# if (otherCondition):
+#     print("This is true")
+# else:
+#     print("Not true")
 
 #Programs get executed from top to bottom. If you use the same variable it gets overridden
 
-# age = 56
-# print(age)
-
+age = 56
+print(age)
+decimalStuff = 12.3
 # You can do math
 
 # age2 = age+decimalStuff
@@ -68,18 +77,18 @@ print("Hello")
 # print(age4)
 # print(age5)
 #
-# # Extra math
-# # // gives you the whole number. Gets rid of the numbers left of the decimal
-# age6 = age//decimalStuff
-# print(age6)
-#
-# # % is known as the mod. It returns the remainder of the division
-# age7 = age%decimalStuff
-# print(age7)
-#
-# # ** two multiplications is the exponent. It is age to the power of decimalStuff
-# age8 = age**decimalStuff
-# print(age8)
+# Extra math
+# // gives you the whole number. Gets rid of the numbers left of the decimal
+age6 = age//decimalStuff
+print(age6)
+
+# % is known as the mod. It returns the remainder of the division
+age7 = age%decimalStuff
+print(age7)
+
+# ** two multiplications is the exponent. It is age to the power of decimalStuff
+age8 = 56**12.3
+print(age8)
 
 # Augmented operators
 # newAge = 20
