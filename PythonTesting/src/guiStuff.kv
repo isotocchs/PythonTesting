@@ -1,5 +1,45 @@
+#:import utils kivy.utils
+
 #BoxLayoutEx:
-NotMainWidget:
+#NotMainWidget:
+#AnchorLayoutEx
+GridLayoutEx
+
+<GridLayoutEx>
+	#this layout allows you to specify rows and columns
+	cols: 3
+	#rows: 1
+	Button:
+		text: "Button A"
+		#size has to be matched for elements in same column
+		size_hint:.5,1
+	Button:
+		text: "Button B"
+	Button:
+		text: "Button C"
+	Button:
+		text: "Button D"
+		size_hint:.5,1
+	Button:
+		text: "Button E"
+	Button:
+		text: "Button F"
+	#can stack layouts
+	#BoxLayoutEx:
+
+<AnchorLayoutEx>
+	#right, left, center
+	anchor_x : "center"
+	#bottom, top, center
+	anchor_y: "top"
+	BoxLayout:
+		size_hint: .2 , .1
+		Button:
+			text: "B1"
+			#size_hint: .2 , .1
+		Button:
+			text: "B1"
+			#size_hint: .2 , .1
 
 <BoxLayoutEx>:
 	orientation:"vertical"
@@ -54,9 +94,11 @@ NotMainWidget:
 		text: "Hello2"
 		size: "50dp", "50dp"
 		pos: "275dp", "30dp"
+		background_color:utils.get_color_from_hex("#1ecbe1")
 	Label:
 		text: "Hello Label"
 		size: "150dp", "150dp"
 		pos: "375dp", "30dp"
-		color: 81,126,203,1
+		#color in rgb and opacity - values = %
+		color: 0,1,0,1
 		

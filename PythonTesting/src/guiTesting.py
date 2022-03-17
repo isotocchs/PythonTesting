@@ -2,8 +2,13 @@ from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
+from kivy.uix.gridlayout import GridLayout
+
+class GridLayoutEx(GridLayout):
+    pass
 
 class BoxLayoutEx(BoxLayout):
     pass
@@ -20,6 +25,8 @@ class BoxLayoutEx(BoxLayout):
     #     self.add_widget(b2)
     #     self.add_widget(b3)
 
+class AnchorLayoutEx(AnchorLayout):
+    pass
 
 class NotMainWidget(Widget):
     pass
