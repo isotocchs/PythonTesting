@@ -1,9 +1,62 @@
-MainWidget:
+#BoxLayoutEx:
+NotMainWidget:
 
-<MainWidget>
+<BoxLayoutEx>:
+	orientation:"vertical"
+	Button:
+		text:"Button1"
+		#size: "50dp", "50dp"
+		#size_hint uses proportions 0.8 = 80% of grid box
+		size_hint: 0.8, 0.5
+	Button:
+		text:"Button2"
+		#manual size manipulation - does not change the size when window changes
+		#size_hint: None, None
+		#size: "60dp", "60dp"
+		#width:"100dp"
+		#height:"50dp"		
+	Button:
+		text:"Button3"
+		size_hint: 0.5, 1
+		#positioning with pos_hint: {}
+		#x, center_x, right - can only pick one
+		#y, center_y, top - can only pick one
+		#the number is where the button starts to be displayed based on screen percentage
+		#x - based on left side of button
+		#pos_hint: {"x": 0.5}
+		#right - based on right side of the button
+		#pos_hint: {"right": 0.90}
+		#center_x - based on the center of the button
+		#pos_hint: {"center_x": 0.50}
+		#the code goes in order so the last line overrides the first
+		#pos_hint: {"center_x": 0.60}
+	
+	BoxLayout:
+		orientation:"horizontal"
+		#spacing between the elements
+		spacing:"10dp"
+		Button:
+			text:"ButtonB1"
+		Button:
+			text:"ButtonB2"
+		Button:
+			text:"ButtonB3"
+		Label:
+			text: "Label 1"
+		
+		
+<NotMainWidget>
 	Button:
 		text: "Hello"
-		size: 200, 100
-		pos: 10, 30
-		
+		size: "50dp", "50dp"
+		pos: "200dp", "30dp"
+	Button:
+		text: "Hello2"
+		size: "50dp", "50dp"
+		pos: "275dp", "30dp"
+	Label:
+		text: "Hello Label"
+		size: "150dp", "150dp"
+		pos: "375dp", "30dp"
+		color: 81,126,203,1
 		
