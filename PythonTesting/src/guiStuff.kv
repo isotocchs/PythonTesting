@@ -2,38 +2,78 @@
 
 #BoxLayoutEx:
 #NotMainWidget:
-#AnchorLayoutEx
-GridLayoutEx
+#AnchorLayoutEx:
+#GridLayoutEx:
+StackLayoutEx:
+#ScrollViewEx:
+
+<ScrollViewEx>:
+	StackLayoutEx:
+		#have to tell it the size of the area it needs to scroll
+		size_hint:1, None
+		height: self.minimum_height
+
+<StackLayoutEx>
+	#orientation can be left-right, top-bottom
+	# or right-left, bottom-top or any combination
+	orientation:"lr-tb"
+	
+	#padding around the whole thing
+	# padding: ("left padding value", "top padding value", "right padding value", "bottom padding value")
+	padding:("20dp", "40dp", "20dp", "40dp")
+	
+	#spacing in between the sections spacing:"horizontal spacing value","vertical spacing value"
+	spacing:"20dp","10dp"
+	Button:
+		text:"Button 1"
+		size_hint:.2,.2
+	Button:
+		text:"Button 2"
+		size_hint:.2,.2
+	Button:
+		text:"Button 3"
+		size_hint:.2,.2
+	Button:
+		text:"Button 4"
+		size_hint:.2,.2
+	Button:
+		text:"Button 5"
+		size_hint:.2,.2
+	Button:
+		text:"Button 6"
+		size_hint:.2,.2
 
 <GridLayoutEx>
 	#this layout allows you to specify rows and columns
-	cols: 3
-	#rows: 1
+	cols: 2
+	#rows: 6
 	Button:
 		text: "Button A"
 		#size has to be matched for elements in same column
-		size_hint:.5,1
+		#size_hint:1,.5
 	Button:
 		text: "Button B"
+		size_hint:1,.5
 	Button:
 		text: "Button C"
+		size_hint:1,.5
 	Button:
 		text: "Button D"
-		size_hint:.5,1
+		size_hint:1,1
 	Button:
 		text: "Button E"
 	Button:
 		text: "Button F"
 	#can stack layouts
-	#BoxLayoutEx:
+	BoxLayoutEx:
 
 <AnchorLayoutEx>
 	#right, left, center
 	anchor_x : "center"
 	#bottom, top, center
-	anchor_y: "top"
+	anchor_y: "center"
 	BoxLayout:
-		size_hint: .2 , .1
+		size_hint: .20 , .20
 		Button:
 			text: "B1"
 			#size_hint: .2 , .1
@@ -47,23 +87,23 @@ GridLayoutEx
 		text:"Button1"
 		#size: "50dp", "50dp"
 		#size_hint uses proportions 0.8 = 80% of grid box
-		size_hint: 0.8, 0.5
+		size_hint: 0.5, 1
 	Button:
 		text:"Button2"
 		#manual size manipulation - does not change the size when window changes
-		#size_hint: None, None
+		size_hint: None, None
 		#size: "60dp", "60dp"
 		#width:"100dp"
 		#height:"50dp"		
 	Button:
 		text:"Button3"
-		size_hint: 0.5, 1
+		size_hint: 0.25, 0.25
 		#positioning with pos_hint: {}
 		#x, center_x, right - can only pick one
 		#y, center_y, top - can only pick one
 		#the number is where the button starts to be displayed based on screen percentage
 		#x - based on left side of button
-		#pos_hint: {"x": 0.5}
+		pos_hint: {"x": .75}
 		#right - based on right side of the button
 		#pos_hint: {"right": 0.90}
 		#center_x - based on the center of the button
@@ -74,7 +114,7 @@ GridLayoutEx
 	BoxLayout:
 		orientation:"horizontal"
 		#spacing between the elements
-		spacing:"10dp"
+		spacing:"100dp"
 		Button:
 			text:"ButtonB1"
 		Button:
@@ -88,13 +128,15 @@ GridLayoutEx
 <NotMainWidget>
 	Button:
 		text: "Hello"
-		size: "50dp", "50dp"
+		size: "100dp", "50dp"
 		pos: "200dp", "30dp"
 	Button:
 		text: "Hello2"
 		size: "50dp", "50dp"
-		pos: "275dp", "30dp"
-		background_color:utils.get_color_from_hex("#1ecbe1")
+		pos: "325dp", "30dp"
+		background_color:utils.get_color_from_hex("#d42c2b")
+		# rgb opacity
+		color:0,0.5,1,1
 	Label:
 		text: "Hello Label"
 		size: "150dp", "150dp"
