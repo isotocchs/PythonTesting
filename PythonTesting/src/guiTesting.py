@@ -9,7 +9,18 @@ from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.uix.scrollview import ScrollView
+from kivy.properties import StringProperty
 
+
+class WidgetExample(GridLayout):
+    count = 0
+    myText = StringProperty("Hello")
+    def onButtonClick(self):
+        print("Button Clicked")
+        self.count +=1
+        self.myText = "You Clicked the button."
+        self.myText = str(self.count)
+        
 class ScrollViewEx(ScrollView):
     pass
 
@@ -17,8 +28,8 @@ class StackLayoutEx(StackLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.orientation = "lr-tb"
-        b=Button(text="A", size_hint=(.2,.2))
-        self.add_widget(b)
+        # eijurgb=Button(text="A", size_hint=(.2,.2))
+        # self.add_widget(eijurgb)
         # for i in range(0,10):
         #     b2=Button(text=str(i+1), size_hint=(.2,.2))
         #     self.add_widget(b2)
@@ -29,9 +40,11 @@ class StackLayoutEx(StackLayout):
         #     size = dp(100)+i*10
         #     b2=Button(text=str(i+1), size_hint=(None,None), size=(size,size))
         #     self.add_widget(b2)
-        # for i in range(0,100):
-        #     b2=Button(text=str(i+1), size_hint=(None,None), size=(dp(100),dp(100)))
-        #     self.add_widget(b2)
+        for i in range(0,100):
+            b2=Button(text=str(i+1), size_hint=(None,None), size=(dp(100),dp(100)))
+            self.add_widget(b2)
+    #pass
+
 
 class GridLayoutEx(GridLayout):
     pass

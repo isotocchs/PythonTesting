@@ -4,8 +4,29 @@
 #NotMainWidget:
 #AnchorLayoutEx:
 #GridLayoutEx:
-StackLayoutEx:
+#StackLayoutEx:
 #ScrollViewEx:
+#PageLayoutEx:
+WidgetExample:
+
+<WidgetExample>:
+	cols:3
+	Button:
+		text:"Click Here"
+		#have to use root instead of self. 
+		#Self would refer to the button not the widget
+		on_press: root.onButtonClick()
+		
+	Label:
+		#text:"You clicked the button"
+		text:root.myText
+		font_name: Lcd.ttf
+
+<PageLayoutEx@PageLayout>:
+	NotMainWidget:
+	AnchorLayoutEx:
+	BoxLayoutEx:
+	
 
 <ScrollViewEx>:
 	StackLayoutEx:
@@ -16,7 +37,7 @@ StackLayoutEx:
 <StackLayoutEx>
 	#orientation can be left-right, top-bottom
 	# or right-left, bottom-top or any combination
-	orientation:"lr-tb"
+	orientation:"lr-bt"
 	
 	#padding around the whole thing
 	# padding: ("left padding value", "top padding value", "right padding value", "bottom padding value")
@@ -42,6 +63,10 @@ StackLayoutEx:
 	Button:
 		text:"Button 6"
 		size_hint:.2,.2
+	Button:
+		text:"Button 7"
+		size_hint:.2,.2
+	
 
 <GridLayoutEx>
 	#this layout allows you to specify rows and columns
