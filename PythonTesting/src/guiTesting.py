@@ -9,17 +9,35 @@ from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.uix.scrollview import ScrollView
-from kivy.properties import StringProperty
+from kivy.properties import StringProperty, BooleanProperty
 
 
 class WidgetExample(GridLayout):
     count = 0
+    countEnabled = BooleanProperty(False)
     myText = StringProperty("Hello")
+    sliderValueText = StringProperty("Value")
     def onButtonClick(self):
         print("Button Clicked")
-        self.count +=1
-        self.myText = "You Clicked the button."
-        self.myText = str(self.count)
+        if self.countEnabled:
+            self.count +=1
+            self.myText = "You Clicked the button."
+            self.myText = str(self.count)
+            
+    def onToggleButton(self, toggleSelf):
+        print("The State of the toggle: "+toggleSelf.state)
+        if toggleSelf.state == "normal":
+            toggleSelf.text = "OFF"
+            self.countEnabled = False
+        else:
+            toggleSelf.text = "ON"
+            self.countEnabled = True
+            
+    def switchOnOff(self, switchSelf):
+        print("The state of the switch: "+str(switchSelf.active))
+    def sliderValue(self, sliderSelf):
+        print("Slider Value: "+str(int(sliderSelf.value)))
+        self.sliderValueText = str(int(sliderSelf.value))
         
 class ScrollViewEx(ScrollView):
     pass

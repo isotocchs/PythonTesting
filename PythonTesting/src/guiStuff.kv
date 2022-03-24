@@ -11,17 +11,39 @@ WidgetExample:
 
 <WidgetExample>:
 	cols:3
+	ToggleButton:
+		text:"toggle"
+		text:"OFF"
+		#pass self because you want the state of the button
+		on_state: root.onToggleButton(self)
+		size_hint: None,1
+		width:"100dp"
 	Button:
 		text:"Click Here"
 		#have to use root instead of self. 
 		#Self would refer to the button not the widget
 		on_press: root.onButtonClick()
-		
+		disabled:not root.countEnabled
 	Label:
 		#text:"You clicked the button"
 		text:root.myText
-		font_name: Lcd.ttf
-
+		font_name: "Lcd.ttf"
+		font_size: "80dp"
+		color: utils.get_color_from_hex("#d42c2b")
+	Switch:
+		on_active: root.switchOnOff(self)
+		size_hint: None,1
+		width:"100dp"
+	Slider:
+		#orientation:"vertical"
+		min:0
+		max:100
+		value:50
+		on_value:root.sliderValue(self)
+	Label:
+		#text: "Slider Value"
+		text: root.sliderValueText	
+	
 <PageLayoutEx@PageLayout>:
 	NotMainWidget:
 	AnchorLayoutEx:
