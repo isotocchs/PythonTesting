@@ -15,13 +15,13 @@ from kivy.properties import StringProperty, BooleanProperty
 class WidgetExample(GridLayout):
     count = 0
     countEnabled = BooleanProperty(False)
-    myText = StringProperty("Hello")
+    myText = StringProperty("Counter")
     sliderValueText = StringProperty("Value")
     def onButtonClick(self):
         print("Button Clicked")
         if self.countEnabled:
             self.count +=1
-            self.myText = "You Clicked the button."
+            #self.myText = "You Clicked the button."
             self.myText = str(self.count)
             
     def onToggleButton(self, toggleSelf):
@@ -45,7 +45,7 @@ class ScrollViewEx(ScrollView):
 class StackLayoutEx(StackLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.orientation = "lr-tb"
+        self.orientation = "rl-tb"
         # eijurgb=Button(text="A", size_hint=(.2,.2))
         # self.add_widget(eijurgb)
         # for i in range(0,10):

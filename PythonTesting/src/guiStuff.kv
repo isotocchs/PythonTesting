@@ -12,7 +12,7 @@ WidgetExample:
 <WidgetExample>:
 	cols:3
 	ToggleButton:
-		text:"toggle"
+		#text:"toggle"
 		text:"OFF"
 		#pass self because you want the state of the button
 		on_state: root.onToggleButton(self)
@@ -22,14 +22,18 @@ WidgetExample:
 		text:"Click Here"
 		#have to use root instead of self. 
 		#Self would refer to the button not the widget
+		
+		disabled: not root.countEnabled
+		
 		on_press: root.onButtonClick()
-		disabled:not root.countEnabled
+		
 	Label:
 		#text:"You clicked the button"
 		text:root.myText
-		font_name: "Lcd.ttf"
-		font_size: "80dp"
-		color: utils.get_color_from_hex("#d42c2b")
+		font_size: "100dp"
+		font_name: "/fonts/Smokum-Regular.ttf"
+		
+		color: utils.get_color_from_hex("#ecd013")
 	Switch:
 		on_active: root.switchOnOff(self)
 		size_hint: None,1
@@ -42,7 +46,10 @@ WidgetExample:
 		on_value:root.sliderValue(self)
 	Label:
 		#text: "Slider Value"
-		text: root.sliderValueText	
+		text: root.sliderValueText
+		font_name: "PaletteMosaic-Regular.ttf"
+		font_size: "100dp"
+		color: utils.get_color_from_hex("#ecd013")
 	
 <PageLayoutEx@PageLayout>:
 	NotMainWidget:
@@ -59,7 +66,7 @@ WidgetExample:
 <StackLayoutEx>
 	#orientation can be left-right, top-bottom
 	# or right-left, bottom-top or any combination
-	orientation:"lr-bt"
+	orientation:"lr-tb"
 	
 	#padding around the whole thing
 	# padding: ("left padding value", "top padding value", "right padding value", "bottom padding value")
