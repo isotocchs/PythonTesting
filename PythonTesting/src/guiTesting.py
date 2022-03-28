@@ -17,6 +17,7 @@ class WidgetExample(GridLayout):
     countEnabled = BooleanProperty(False)
     myText = StringProperty("Counter")
     sliderValueText = StringProperty("Value")
+    myTextBoxInput = StringProperty("Text Box")
     def onButtonClick(self):
         print("Button Clicked")
         if self.countEnabled:
@@ -36,8 +37,11 @@ class WidgetExample(GridLayout):
     def switchOnOff(self, switchSelf):
         print("The state of the switch: "+str(switchSelf.active))
     def sliderValue(self, sliderSelf):
-        print("Slider Value: "+str(int(sliderSelf.value)))
+        print("Slider Value: "+str(sliderSelf.value))
         self.sliderValueText = str(int(sliderSelf.value))
+        
+    def onTextValidate(self, textBoxSelf):
+        self.myTextBoxInput = textBoxSelf.text
         
 class ScrollViewEx(ScrollView):
     pass

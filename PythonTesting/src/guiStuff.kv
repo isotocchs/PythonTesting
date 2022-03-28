@@ -31,9 +31,9 @@ WidgetExample:
 		#text:"You clicked the button"
 		text:root.myText
 		font_size: "100dp"
-		font_name: "Smokum-Regular.ttf"
+		font_name: "../fonts/Lcd.ttf"
 		
-		color: utils.get_color_from_hex("#ecd013")
+		color: utils.get_color_from_hex("#7a0ff0")
 	Switch:
 		on_active: root.switchOnOff(self)
 		size_hint: None,1
@@ -41,16 +41,28 @@ WidgetExample:
 	Slider:
 		#orientation:"vertical"
 		min:0
-		max:100
-		value:50
+		max:10
+		value:5
+		step:1
 		on_value:root.sliderValue(self)
 	Label:
 		#text: "Slider Value"
 		text: root.sliderValueText
-		font_name: "PaletteMosaic-Regular.ttf"
+		font_name: "../fonts/PaletteMosaic-Regular.ttf"
 		font_size: "100dp"
 		color: utils.get_color_from_hex("#ecd013")
-	
+	TextInput:
+		size_hint: None,1
+		width:"100dp"
+		text:"Text Box"
+		multiline: False
+		id: myTextInput
+		on_text_validate: root.onTextValidate(self)
+		
+	Label:
+		#text:myTextInput.text
+		text:"Your name is: "+root.myTextBoxInput
+		
 <PageLayoutEx@PageLayout>:
 	NotMainWidget:
 	AnchorLayoutEx:
