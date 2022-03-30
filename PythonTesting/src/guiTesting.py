@@ -17,7 +17,7 @@ class WidgetExample(GridLayout):
     countEnabled = BooleanProperty(False)
     myText = StringProperty("Counter")
     sliderValueText = StringProperty("Value")
-    myTextBoxInput = StringProperty("Text Box")
+    myTextBoxInput = StringProperty("")
     def onButtonClick(self):
         print("Button Clicked")
         if self.countEnabled:

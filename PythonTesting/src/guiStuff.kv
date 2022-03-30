@@ -13,11 +13,12 @@ ImageExample:
 <ImageExample@GridLayout>:
 	cols:3
 	Image:
-		source:"../images/two-cool-alpacas-mcce1ew8vikbvddx.jpg"
+		source:"../images/kitten-cat.gif"
+		anim_loop:3
 	Image:
 		source:"../images/two-cool-alpacas-mcce1ew8vikbvddx.jpg"
-		#allow_stretch:True
-		#keep_ratio:False
+		allow_stretch:True
+		keep_ratio:False
 	Image:
 		source:"../images/two-cool-alpacas-mcce1ew8vikbvddx.jpg"
 		
@@ -68,7 +69,7 @@ ImageExample:
 	TextInput:
 		size_hint: None,1
 		width:"100dp"
-		text:"Text Box"
+		text:"Type something"
 		multiline: False
 		id: myTextInput
 		on_text_validate: root.onTextValidate(self)
