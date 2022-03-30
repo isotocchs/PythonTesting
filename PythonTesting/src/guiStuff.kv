@@ -7,18 +7,18 @@
 #StackLayoutEx:
 #ScrollViewEx:
 #PageLayoutEx:
-#WidgetExample:
-ImageExample:
+WidgetExample:
+#ImageExample:
 
 <ImageExample@GridLayout>:
 	cols:3
 	Image:
 		source:"../images/kitten-cat.gif"
-		anim_loop:3
+		#anim_loop:3
 	Image:
 		source:"../images/two-cool-alpacas-mcce1ew8vikbvddx.jpg"
-		allow_stretch:True
-		keep_ratio:False
+		#allow_stretch:True
+		#keep_ratio:False
 	Image:
 		source:"../images/two-cool-alpacas-mcce1ew8vikbvddx.jpg"
 		
@@ -70,13 +70,13 @@ ImageExample:
 		size_hint: None,1
 		width:"100dp"
 		text:"Type something"
-		multiline: False
+		#multiline: False
 		id: myTextInput
-		on_text_validate: root.onTextValidate(self)
+		#on_text_validate: root.onTextValidate(self)
 		
 	Label:
-		#text:myTextInput.text
-		text:"Your name is: "+root.myTextBoxInput
+		text:myTextInput.text
+		#text:"Your name is: "+root.myTextBoxInput
 		
 <PageLayoutEx@PageLayout>:
 	NotMainWidget:
