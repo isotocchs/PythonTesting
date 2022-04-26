@@ -1,0 +1,114 @@
+WindowManager:
+	HomeScreen:
+	FirstWindow:
+	SecondWindow:
+
+
+<HomeScreen>:
+	name: "home"
+	BoxLayout:
+		orientation:"vertical"
+		BoxLayout:
+			size_hint: 1,.1
+			orientation:"horizontal"
+			Button:
+				text:"Home"
+				on_release:app.root.current = "home"
+			Button:
+				text:"First Screen"
+				on_release:
+					app.root.current = "first"
+					root.manager.transition.direction = "up"
+			Button:
+				text:"Second Screen"
+				on_release:app.root.current = "second"
+		
+		Label:
+			text:"Home Screen"
+			font_size:40
+	
+	
+	
+<FirstWindow>:
+	name: "first"
+	BoxLayout:
+		orientation:"vertical"
+		BoxLayout:
+			size_hint: 1,.1
+			orientation:"horizontal"
+			Button:
+				text:"Home"
+				on_release:
+					app.root.current = "home"
+					root.manager.transition.direction = "down"
+			Button:
+				text:"First Screen"
+				on_release:app.root.current = "first"
+			Button:
+				text:"Second Screen"
+				on_release:app.root.current = "second"
+		ActionBar:
+			#pos: 0,0 
+			size_hint:1,.1
+			ActionView:
+				ActionPrevious:
+					title:"Action Bar"
+					with_previous:False
+					app_icon:""
+				ActionButton:
+					text:"Button1"
+					on_release:app.root.current = "home"
+				ActionButton:
+					text:"Button2"
+					on_release:app.root.current = "second"
+		Label:
+			text:"First Window"
+			font_size:40
+				
+		
+		
+		
+
+	
+<SecondWindow>:
+	name: "second"
+	BoxLayout:
+		orientation:"vertical"
+		BoxLayout:
+			size_hint: 1,.1
+			orientation:"horizontal"
+			Button:
+				text:"Home"
+				on_release:
+					app.root.current = "home"
+					root.manager.transition.direction = "right"
+			Button:
+				text:"First Screen"
+				on_release:
+					app.root.current = "first"
+					root.manager.transition.direction = "right"
+			Button:
+				text:"Second Screen"
+				on_release:app.root.current = "second"
+		CanvasExample1:
+	
+#:set s dp(75)
+			
+<CanvasExample1>:
+	canvas:
+		Rectangle:
+			pos:dp(100),dp(100)
+			pos:self.center
+			pos:self.center_x-s/2,self.center_y-s/2
+			size:dp(150),dp(100)
+			size:s,s
+		Ellipse:
+			pos:self.center_x/4,100
+			size:s,s/2
+		Line:
+			points: (0,0,100,100,200,0, self.width, 200)
+		Line:
+			points:(0,0,self.width/4,300,self.width/2,0,self.width*3/4,300,self.width,0)
+			width:3
+		
+	

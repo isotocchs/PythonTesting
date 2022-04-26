@@ -9,16 +9,17 @@
 #PageLayoutEx:
 WidgetExample:
 #ImageExample:
+#StackLayoutEx2:
 
 <ImageExample@GridLayout>:
 	cols:3
 	Image:
 		source:"../images/kitten-cat.gif"
-		#anim_loop:3
+		anim_loop:3
 	Image:
 		source:"../images/two-cool-alpacas-mcce1ew8vikbvddx.jpg"
-		#allow_stretch:True
-		#keep_ratio:False
+		allow_stretch:True
+		keep_ratio:False
 	Image:
 		source:"../images/two-cool-alpacas-mcce1ew8vikbvddx.jpg"
 		
@@ -46,37 +47,39 @@ WidgetExample:
 		#text:"You clicked the button"
 		text:root.myText
 		font_size: "100dp"
-		font_name: "../fonts/Lcd.ttf"
+		font_name: "../fonts/PassionsConflict-Regular.ttf"
 		
-		color: utils.get_color_from_hex("#7a0ff0")
+		color: utils.get_color_from_hex("#fa050b")
 	Switch:
 		on_active: root.switchOnOff(self)
 		size_hint: None,1
 		width:"100dp"
 	Slider:
 		#orientation:"vertical"
-		min:0
-		max:10
-		value:5
+		min:-123
+		max:100
+		value:-5
 		step:1
 		on_value:root.sliderValue(self)
 	Label:
 		#text: "Slider Value"
 		text: root.sliderValueText
-		font_name: "../fonts/PaletteMosaic-Regular.ttf"
+		#font_name: "../fonts/PaletteMosaic-Regular.ttf"
 		font_size: "100dp"
 		color: utils.get_color_from_hex("#ecd013")
 	TextInput:
 		size_hint: None,1
 		width:"100dp"
 		text:"Type something"
-		#multiline: False
+		multiline: False
 		id: myTextInput
-		#on_text_validate: root.onTextValidate(self)
+		on_text_validate: root.onTextValidate(self)
 		
 	Label:
-		text:myTextInput.text
-		#text:"Your name is: "+root.myTextBoxInput
+		#text:myTextInput.text
+		text:"Your name is: "+root.myTextBoxInput
+	Label:
+		text:root.typingText
 		
 <PageLayoutEx@PageLayout>:
 	NotMainWidget:
@@ -224,4 +227,142 @@ WidgetExample:
 		pos: "375dp", "30dp"
 		#color in rgb and opacity - values = %
 		color: 0,1,0,1
+		
+
+
+
+<StackLayoutEx2>: 
+	ToggleButton:
+		text: "1"
+		size_hint: .2,.2
+		on_state: root.onToggleButton2(self)
+		on_state: root.onToggleButton6(self)
+	ToggleButton:
+		text: "2"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled2
+		on_state: root.onToggleButton3(self)
+	ToggleButton:
+		text: "3"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled3
+		on_state: root.onToggleButton4(self)
+		on_state: root.onToggleButton8(self)
+	ToggleButton:
+		text: "4"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled4
+		on_state: root.onToggleButton4L(self)
+	ToggleButton:
+		text: "5"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled5
+		on_state: root.onToggleButton5L(self)
+	ToggleButton:
+		text: "6"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled6
+		on_state: root.onToggleButton7(self)
+	ToggleButton:
+		text: "7"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled7
+		on_state: root.onToggleButton7L(self)
+	ToggleButton:
+		text: "8"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled8
+		on_state: root.onToggleButton9(self)
+	ToggleButton:
+		text: "9"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled9
+		on_state: root.onToggleButton10(self)
+		on_state: root.onToggleButton14(self)
+	ToggleButton:
+		text: "10"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled10
+		on_state: root.onToggleButton5(self)
+	ToggleButton:
+		text: "11"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled11
+		on_state: root.onToggleButton16(self)
+	ToggleButton:
+		text: "12"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled12
+		on_state: root.onToggleButton11(self)
+		on_state: root.onToggleButton17(self)
+	ToggleButton:
+		text: "13"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled13
+		on_state: root.onToggleButton12(self)
+	ToggleButton:
+		text: "14"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled14
+		on_state: root.onToggleButton13(self)
+	ToggleButton:
+		text: "15"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled15
+		on_state: root.onToggleButton15L(self)
+	ToggleButton:
+		text: "16"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled16
+		on_state: root.onToggleButton16L(self)
+	ToggleButton:
+		text: "17"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled17
+		on_state: root.onToggleButton22(self)
+	ToggleButton:
+		text: "18"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled18
+		on_state: root.onToggleButton19(self)
+	ToggleButton:
+		text: "19"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled19
+		on_state: root.onToggleButton20(self)
+		on_state: root.onToggleButton24(self)
+	ToggleButton:
+		text: "20"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled20
+		on_state: root.onToggleButton15(self)
+	ToggleButton:
+		text: "21"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled21
+		on_state: root.onToggleButton21L(self)
+	ToggleButton:
+		text: "22"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled22
+		on_state: root.onToggleButton21(self)
+		on_state: root.onToggleButton23(self)
+	ToggleButton:
+		text: "23"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled23
+		on_state: root.onToggleButton18(self)
+	ToggleButton:
+		text: "24"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled24
+		on_state: root.onToggleButton25(self)
+	ToggleButton:
+		text: "25"
+		size_hint: .2,.2
+		disabled: not root.moveEnabled25
+		on_state: root.onToggleButton25W(self)
+		
+		
+		
 		
