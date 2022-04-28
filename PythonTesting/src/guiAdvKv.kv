@@ -127,7 +127,7 @@ WindowManager:
 					text:"Button2"
 					on_release:app.root.current = "second"
 		
-		CanvasExample1:
+		CanvasExample3:
 
 <ThirdWindow>:
 	name: "third"
@@ -188,5 +188,23 @@ WindowManager:
 		Line:
 			#circle:(x coord of center,y coord of center,radius)
 			circle: (100, 100, 100)
+			width:2
+		Color:
+			rgb:0,1,0
+			#rgba: 0,1,0,.5
+		Line:
+			#ellipse:(x coord of center,y coord of center,radius x, radius y)
+			ellipse: (300,300,100,200)
+			width:5
+		Line:
+			#rectangle: (x coord, y coord, width, height)
+			rectangle:(400,200,100,50)
+			width:3
+
+<CanvasExample3>:
+	Button:
+		pos:0,self.height/2
+		text:"Press"
+		on_press:root.on_button_press()
 		
 	
