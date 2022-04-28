@@ -2,6 +2,7 @@ WindowManager:
 	HomeScreen:
 	FirstWindow:
 	SecondWindow:
+	ThirdWindow:
 
 
 <HomeScreen>:
@@ -13,19 +14,28 @@ WindowManager:
 			orientation:"horizontal"
 			Button:
 				text:"Home"
-				on_release:app.root.current = "home"
+				on_release:
+					app.root.current = "home"
+					root.manager.transition.direction = "left"
 			Button:
 				text:"First Screen"
 				on_release:
 					app.root.current = "first"
-					root.manager.transition.direction = "up"
+					root.manager.transition.direction = "left"
 			Button:
 				text:"Second Screen"
-				on_release:app.root.current = "second"
+				on_release:
+					app.root.current = "second"
+					root.manager.transition.direction = "left"
+			Button:
+				text:"Third Screen"
+				on_release:
+					app.root.current = "third"
+					root.manager.transition.direction = "left"
 		
 		Label:
 			text:"Home Screen"
-			font_size:40
+			font_size:
 	
 	
 	
@@ -40,21 +50,29 @@ WindowManager:
 				text:"Home"
 				on_release:
 					app.root.current = "home"
-					root.manager.transition.direction = "down"
+					root.manager.transition.direction = "right"
 			Button:
 				text:"First Screen"
 				on_release:app.root.current = "first"
 			Button:
 				text:"Second Screen"
-				on_release:app.root.current = "second"
+				on_release:
+					app.root.current = "second"
+					root.manager.transition.direction = "left"
+			Button:
+				text:"Third Screen"
+				on_release:
+					app.root.current = "third"
+					root.manager.transition.direction = "left"
 		ActionBar:
 			#pos: 0,0 
 			size_hint:1,.1
 			ActionView:
 				ActionPrevious:
 					title:"Action Bar"
-					with_previous:False
-					app_icon:""
+					#with_previous:False
+					app_icon:"../images/apple-pink-lady.png"
+					on_release:app.root.current = "home"
 				ActionButton:
 					text:"Button1"
 					on_release:app.root.current = "home"
@@ -67,9 +85,6 @@ WindowManager:
 				
 		
 		
-		
-
-	
 <SecondWindow>:
 	name: "second"
 	BoxLayout:
@@ -89,26 +104,89 @@ WindowManager:
 					root.manager.transition.direction = "right"
 			Button:
 				text:"Second Screen"
-				on_release:app.root.current = "second"
+				on_release:
+					app.root.current = "second"
+					root.manager.transition.direction = "left"
+			Button:
+				text:"Third Screen"
+				on_release:
+					app.root.current = "third"
+					root.manager.transition.direction = "left"
+		ActionBar:
+			#pos: 0,0 
+			size_hint:1,.1
+			ActionView:
+				ActionPrevious:
+					title:"Action Bar"
+					with_previous:False
+					app_icon:""
+				ActionButton:
+					text:"Button1"
+					on_release:app.root.current = "home"
+				ActionButton:
+					text:"Button2"
+					on_release:app.root.current = "second"
+		
 		CanvasExample1:
+
+<ThirdWindow>:
+	name: "third"
+	BoxLayout:
+		orientation:"vertical"
+		BoxLayout:
+			size_hint: 1,.1
+			orientation:"horizontal"
+			Button:
+				text:"Home"
+				on_release:
+					app.root.current = "home"
+					root.manager.transition.direction = "right"
+			Button:
+				text:"First Screen"
+				on_release:
+					app.root.current = "first"
+					root.manager.transition.direction = "right"
+			Button:
+				text:"Second Screen"
+				on_release:
+					app.root.current = "second"
+					root.manager.transition.direction = "right"
+			Button:
+				text:"Third Screen"
+				on_release:
+					app.root.current = "third"
+					root.manager.transition.direction = "left"
+		
+		CanvasExample2:
 	
-#:set s dp(75)
+
+
+	
+#:set varName dp(75)
 			
 <CanvasExample1>:
 	canvas:
 		Rectangle:
 			pos:dp(100),dp(100)
-			pos:self.center
-			pos:self.center_x-s/2,self.center_y-s/2
-			size:dp(150),dp(100)
-			size:s,s
+			#pos:self.center
+			#pos:self.center_x-100/2,self.center_y-100/2
+			#size:dp(150),dp(100)
+			size:100,100
 		Ellipse:
-			pos:self.center_x/4,100
-			size:s,s/2
+			pos:self.center_x-varName/2,self.center_y-varName/2
+			#pos:self.center
+			size:varName,varName
 		Line:
-			points: (0,0,100,100,200,0, self.width, 200)
+			points:(0,0,100,100,200,0,self.width,self.height)
+			#points: (0,0,100,100,200,0, self.width, self.height)
 		Line:
-			points:(0,0,self.width/4,300,self.width/2,0,self.width*3/4,300,self.width,0)
-			width:3
+			points:(0,0,self.width/4,self.height/2,self.width/2,0,self.width*3/4,self.height/2,self.width,0)
+			width:5
+			
+<CanvasExample2>:
+	canvas:
+		Line:
+			#circle:(x coord of center,y coord of center,radius)
+			circle: (100, 100, 100)
 		
 	
