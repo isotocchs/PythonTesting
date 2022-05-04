@@ -1,9 +1,10 @@
-WindowManager:
-	HomeScreen:
-	FirstWindow:
-	SecondWindow:
-	ThirdWindow:
+#WindowManager:
+#	HomeScreen:
+#	FirstWindow:
+#	SecondWindow:
+#	ThirdWindow:
 
+CanvasExample5:
 
 <HomeScreen>:
 	name: "home"
@@ -185,26 +186,48 @@ WindowManager:
 			
 <CanvasExample2>:
 	canvas:
-		Line:
-			#circle:(x coord of center,y coord of center,radius)
-			circle: (100, 100, 100)
-			width:2
 		Color:
 			rgb:0,1,0
 			#rgba: 0,1,0,.5
+		Line:
+			#circle:(x coord of center,y coord of center,radius)
+			circle: (150, 150, 100)
+			width:2
+		Color:
+			rgb:0,0,1
+			rgba: 0,0,1,.25
 		Line:
 			#ellipse:(x coord of center,y coord of center,radius x, radius y)
 			ellipse: (300,300,100,200)
 			width:5
 		Line:
 			#rectangle: (x coord, y coord, width, height)
-			rectangle:(400,200,100,50)
+			rectangle:(self.width/5,200,100,50)
 			width:3
+		
+		
+		
 
 <CanvasExample3>:
 	Button:
-		pos:0,self.height/2
-		text:"Press"
-		on_press:root.on_button_press()
+		pos: 0,0
+		text:"Right"
+		size:50,50
+		on_press:root.on_button_press_right()
+	Button:
+		pos: 50,0
+		text:"Left"
+		size:50,50
+		on_press:root.on_button_press_left()
+	Button:
+		pos: 100,0
+		text:"Up"
+		size:50,50
+		on_press:root.on_button_press_up()
+	Button:
+		pos: 150,0
+		text:"Down"
+		size:50,50
+		on_press:root.on_button_press_down()
 		
-	
+<CanvasExample5>:	
