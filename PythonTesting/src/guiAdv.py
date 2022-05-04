@@ -55,48 +55,14 @@ class CanvasExample3(Widget):
         x,y = self.rect.pos
         width, height = self.rect.size
         increase = dp(20)
-        remainingSpace = self.width - (x+width)
-        
-        if remainingSpace < increase:
-            increase = remainingSpace
+       
             
         x += increase
         self.rect.pos = (x,y)
         
         
-    def on_button_press_left(self):
-        x,y = self.rect.pos
-        width, height = self.rect.size
-        increase = dp(20)
-        remainingSpace = 0+x
-        
-        if remainingSpace < increase:
-            increase = remainingSpace
-            
-        x -= increase
-        self.rect.pos = (x,y)
-    def on_button_press_up(self):
-        x,y = self.rect.pos
-        width, height = self.rect.size
-        increase = dp(20)
-        remainingSpace = self.height - (y+height)
-        
-        if remainingSpace < increase:
-            increase = remainingSpace
-            
-        y += increase
-        self.rect.pos = (x,y)
-    def on_button_press_down(self):
-        x,y = self.rect.pos
-        width, height = self.rect.size
-        increase = dp(20)
-        remainingSpace = 0+y
-        
-        if remainingSpace < increase:
-            increase = remainingSpace
-            
-        y -= increase
-        self.rect.pos = (x,y)
+
+    
             
 class CanvasExample5(Widget):
     def __init__(self, **kwargs):
@@ -111,14 +77,23 @@ class CanvasExample5(Widget):
          
     def on_size(self,*args):
         self.ball.pos =  (self.center_x-self.ball_size/2,self.center_y-self.ball_size/2)   
-        
+    
     def update_motion(self,dt):
         x,y = self.ball.pos
         x += self.ball_speed_x
         y += self.ball_speed_y
+        if y+self.ball_size>self.height:
+            y = self.height-self.ball_size
+            self.ball_speed_y = -self.ball_speed_y
         
+        if x+self.ball_size>self.width:
+            x = self.width-self.ball_size
+            self.ball_speed_x = -self.ball_speed_x
         
-        
+        if y<0:
+            self.ball_speed_y = -self.ball_speed_y
+        if x<0:
+            self.ball_speed_x = -self.ball_speed_x
         self.ball.pos = (x,y)
         
         
