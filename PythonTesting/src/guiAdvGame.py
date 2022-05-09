@@ -9,8 +9,8 @@ class MainWidget(Widget):
     perspective_point_x = NumericProperty(0)
     perspective_point_y = NumericProperty(0)
     
-    number_of_vertical_lines = 11
-    vertical_line_spacing = .25 #percentage in screen width
+    number_of_vertical_lines = 7
+    vertical_line_spacing = .1 #percentage in screen width
     verical_lines_array = []
 
     def __init__(self, **kwargs):
