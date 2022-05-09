@@ -82,7 +82,18 @@ class CanvasExample5(Widget):
         x,y = self.ball.pos
         x += self.ball_speed_x
         y += self.ball_speed_y
+        if y+self.ball_size>self.height:
+            y = self.height-self.ball_size
+            self.ball_speed_y = -self.ball_speed_y
         
+        if x+self.ball_size>self.width:
+            x = self.width-self.ball_size
+            self.ball_speed_x = -self.ball_speed_x
+        
+        if y<0:
+            self.ball_speed_y = -self.ball_speed_y
+        if x<0:
+            self.ball_speed_x = -self.ball_speed_x
         self.ball.pos = (x,y)
         
         
