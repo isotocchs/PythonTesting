@@ -9,14 +9,14 @@ class MainWidget(Widget):
     perspective_point_x = NumericProperty(0)
     perspective_point_y = NumericProperty(0)
     
-    number_of_vertical_lines = 7
-    vertical_line_spacing = .1 #percentage in screen width
+    number_of_vertical_lines = 10
+    vertical_line_spacing = .25 #percentage in screen width
     verical_lines_array = []
 
     def __init__(self, **kwargs):
         super(MainWidget,self).__init__(**kwargs)
         self.init_vertical_lines()
-    
+        print("Width Init: "+str(self.width)+" Height Init: "+str(self.height))
     
     def on_size(self,*args):
         print("Width: "+str(self.width)+" Height: "+str(self.height))
@@ -43,10 +43,10 @@ class MainWidget(Widget):
         offset_for_lines = -int(self.number_of_vertical_lines/2)
         for i in range(0,self.number_of_vertical_lines):
                 line_x = int(center_x+offset_for_lines*spacing)
-                
+    
                 x1,y1 = self.transform(line_x, 0)
                 x2,y2 = self.transform(line_x,self.height)
-                
+    
                 self.verical_lines_array[i].points = (x1,y1,x2,y2)
                 offset_for_lines+=1
     
@@ -63,12 +63,12 @@ class MainWidget(Widget):
         transformed_y = y*self.perspective_point_y/self.height
         if transformed_y > self.perspective_point_y:
             transformed_y = self.perspective_point_y
-        
+    
         diff_x = x - self.perspective_point_x
         diff_y = self.perspective_point_y - transformed_y
         proportion_y = diff_y/self.perspective_point_y  
         transformed_x = self.perspective_point_x+diff_x*proportion_y
-        
+    
         return int(transformed_x),int(transformed_y)
         
 class GameApp(App):
