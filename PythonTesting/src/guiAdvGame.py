@@ -71,7 +71,7 @@ class MainWidget(Widget):
     
         return int(transformed_x),int(transformed_y)
         
-class GameApp(App):
+class gameApp(App):
     pass
 
-GameApp().run()
+gameApp().run()
